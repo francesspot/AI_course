@@ -1,39 +1,35 @@
-**Polski** | [English](README.en.md)
+🇵🇱 **Polski** | 🇬🇧 [English](README.en.md)
 
-# Kurs AI — podstawy uczenia maszynowego
+# 🤖 Kurs AI — od pierwszego modelu do sieci neuronowych
 
-Notatniki z wykładów, listy ćwiczeń i projekt końcowy z wprowadzającego kursu uczenia maszynowego. Całość w notatnikach Jupyter z użyciem **pandas**, **scikit-learn** i **Keras**.
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white) ![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
 
-## Wykłady
+> 🎓 Kurs uczenia maszynowego prowadzony przez koło naukowe **CyberTech** (Politechnika Wrocławska)
 
-| Notatnik | Temat | Zbiór danych |
-|----------|-------|--------------|
-| `1w-czym-sa-modele-ai-i-jak-je-uczyc.ipynb` | Czym są modele AI i jak je uczyć — podział na zbiór treningowy i testowy, klasyfikatory KNN i Random Forest, accuracy, precision, recall, F1, macierz pomyłek | `mushroom_data.csv` |
-| `2w-preprocessing-i-analiza-danych.ipynb` | Preprocessing i analiza danych — brakujące wartości, kodowanie tekstu, tworzenie cech, skalowanie, pipeline'y | wiek krabów (Kaggle) |
-| `3w-sieci-neuronowe.ipynb` | Sieci neuronowe w Keras — architektura, funkcja straty i optymalizator, trening, monitorowanie straty na zbiorze testowym | `car_prices.csv` |
+Moje notatniki z wykładów, rozwiązania list zadań i projekt końcowy. 📓
 
-## Listy ćwiczeń
+## 🏆 Projekt końcowy — przewidywanie półki cenowej telefonu
 
-| Folder | Zadanie | Metody |
-|--------|---------|--------|
-| `Ćwiczenia1` | Wykrywanie choroby serca na podstawie danych pacjenta (klasyfikacja) | Regresja logistyczna, KNN, SVM, naiwny Bayes, drzewo decyzyjne; accuracy, precision/recall, F1, krzywa precision-recall |
-| `Ćwiczenia2` | Przewidywanie liczby wypożyczeń rowerów (regresja) | Usuwanie kolumn, imputacja (Simple, Iterative, KNN), one-hot encoding, skalowanie, `ColumnTransformer` + `Pipeline`, regresja liniowa; MAE, MSE, MAPE |
-| `Ćwiczenia3` | Przewidywanie wyników uczniów (regresja) | Sieć neuronowa w Keras, monitorowanie straty walidacyjnej, early stopping, zmniejszanie learning rate'u |
+Na podstawie specyfikacji telefonu (RAM, bateria, aparat, 4G, Wi-Fi…) model przewiduje, czy telefon jest tani, średni, drogi czy bardzo drogi. 📱
 
-## Projekt końcowy — `Projekt/`
+- 🧹 Preprocessing w `Pipeline`: kodowanie wartości tekstowych, uzupełnianie braków, standaryzacja
+- ⚔️ Porównanie modeli: regresja logistyczna, Random Forest i dwie sieci neuronowe w Keras (BatchNorm, Dropout, L2, early stopping, `ReduceLROnPlateau`)
+- 🤝 Łączenie modeli (ensembling)
+- 🥇 **Najlepszy wynik: 0,938** balanced accuracy i macro F1 (sieć neuronowa)
 
-Klasyfikacja **telefonów komórkowych do 4 półek cenowych** (niska, średnia, wysoka, bardzo wysoka) na podstawie ich specyfikacji.
+## 📝 Listy zadań
 
-- Preprocessing: zamiana wartości tekstowych na binarne, imputacja medianą i standaryzacja w `Pipeline`.
-- Porównane modele: regresja logistyczna, Random Forest i dwie sieci neuronowe w Keras (sparse vs one-hot categorical cross-entropy, z batch normalization, dropoutem, L2, early stoppingiem i `ReduceLROnPlateau`).
-- Ważone łączenie (ensembling) prawdopodobieństw z kilku modeli.
-- **Najlepszy wynik:** sieć neuronowa z sparse categorical cross-entropy — **0,938** balanced accuracy i macro F1.
+| | Zadanie | Czego użyłem |
+|---|---|---|
+| ❤️ `Ćwiczenia1` | Wykrywanie choroby serca (klasyfikacja) | regresja logistyczna, KNN, SVM, naiwny Bayes, drzewo decyzyjne; precision, recall, F1 |
+| 🚲 `Ćwiczenia2` | Przewidywanie liczby wypożyczeń rowerów (regresja) | imputacja (Simple, Iterative, KNN), one-hot encoding, `ColumnTransformer`, regresja liniowa |
+| 🎓 `Ćwiczenia3` | Przewidywanie wyników uczniów (regresja) | sieć neuronowa w Keras, early stopping, harmonogram learning rate |
 
-## Uruchamianie
+Notatniki `1w`–`3w` to materiały z wykładów (pierwsze modele, preprocessing, sieci neuronowe).
+
+## 🚀 Uruchomienie
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn tensorflow jupyter
 jupyter notebook
 ```
-
-Otwieraj notatnik z jego folderu, żeby działały względne ścieżki do plików CSV.
